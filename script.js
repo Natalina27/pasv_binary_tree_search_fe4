@@ -1,5 +1,5 @@
 let tree;
-setup();
+
 function setup(){
     console.log('Works fine.');
     tree = new Tree();
