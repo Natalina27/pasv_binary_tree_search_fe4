@@ -1,9 +1,10 @@
 let tree;
 
 function setup(){
-    console.log('Works fine.');
     tree = new Tree();
     tree.addValue(8);
+    console.log(tree);
+
 }
 
 //******************************************
@@ -36,4 +37,3 @@ Node.prototype.addNode = function (n){
         this.right = n;
     }
 }
-
