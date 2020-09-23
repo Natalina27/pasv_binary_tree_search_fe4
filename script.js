@@ -2,8 +2,10 @@ let tree;
 
 function setup(){
     tree = new Tree();
-    tree.addValue(8);
     console.log(tree);
+    tree.addValue(8);
+    tree.addValue(10);
+    tree.addValue(5);
 
 }
 
