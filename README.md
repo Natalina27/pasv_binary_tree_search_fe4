@@ -1,6 +1,7 @@
-# Binary Search Tree
+# Binary Search Tree by Nikolay Grigoryev
 >> Двоичное дерево поиска
    (Binary Search Tree)
+
    
 >Прямой обход (NLR) 
    
@@ -11,3 +12,8 @@
    
    NLR wiki: 
    https://en.wikipedia.org/wiki/Tree_traversal#Pre-order_(NLR)
+![binary tree](./pic.png)
+
+
+Nikolay Grigoryev youtube channel:
+https://www.youtube.com/channel/UCuj3cYM-dqbHNwL9LfM3p1g

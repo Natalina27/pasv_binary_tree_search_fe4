@@ -34,8 +34,17 @@ function Node (value){
 
 Node.prototype.addNode = function (n){
     if(n.value < this.value){
-        this.left = n;
+        if(this.left === null){
+            this.left = n;
+        } else {
+            this.left.addNode(n); //recursive invoke for left
+        }
+
     }else if(n.value > this.value){
-        this.right = n;
+        if(this.right === null){
+            this.right = n;
+        } else {
+            this.right.addNode(n); //recursive invoke for right
+        }
     }
 }
