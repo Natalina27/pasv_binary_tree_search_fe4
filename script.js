@@ -5,7 +5,7 @@ function setup(){
     console.log(tree);
     tree.addValue(8);
     tree.addValue(10);
-    tree.addValue(5);
+    tree.addValue(3);
 
 }
 
