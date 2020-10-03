@@ -14,6 +14,9 @@
    https://en.wikipedia.org/wiki/Tree_traversal#Pre-order_(NLR)
 ![binary tree](./pic.png)
 
+Бинарное дерево это фрактал и поэтому для фрактальной структуры используется рекурсия
+
+
 
 Nikolay Grigoryev youtube channel:
 https://www.youtube.com/channel/UCuj3cYM-dqbHNwL9LfM3p1g

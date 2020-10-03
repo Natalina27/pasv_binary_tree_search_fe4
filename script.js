@@ -3,12 +3,10 @@ const treeNums = [8, 10, 3, 1, 6, 14, 4, 7, 13]
 function setup() {
   tree = new Tree();
   console.log(tree);
-  for(let i = 0; i < treeNums.length; i++){
-    tree.addValue(treeNums[i]);
+  for(let i of treeNums){
+    tree.addValue(i);
   }
 }
-
-
 
 //******************************************
 
