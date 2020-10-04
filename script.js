@@ -6,6 +6,7 @@ function setup() {
   for(let i of treeNums){
     tree.addValue(i);
   }
+  tree.traverse(); // обход дерева
 }
 
 //******************************************
@@ -21,6 +22,10 @@ Tree.prototype.addValue = function (value) {
   } else {
     this.root.addNode(n);
   }
+}
+
+Tree.prototype.traverse = function (){
+  this.root.visit();
 }
 
 //******************************************
@@ -46,4 +51,17 @@ Node.prototype.addNode = function (n) {
       this.right.addNode(n); //recursive invoke for right
     }
   }
+}
+
+Node.prototype.visit = function(){
+  if(this.left !== null){
+    this.left.visit(); //recursive invoke for left
+  }
+
+  console.log(this.value);
+
+  if(this.right !== null){
+    this.right.visit(); //recursive invoke for right
+  }
+
 }
