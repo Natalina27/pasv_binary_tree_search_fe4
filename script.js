@@ -53,6 +53,7 @@ Node.prototype.addNode = function (n) {
   }
 }
 
+// Прямой обход (NLR)
 Node.prototype.visit = function(){
   if(this.left !== null){
     this.left.visit(); //recursive invoke for left
@@ -63,5 +64,18 @@ Node.prototype.visit = function(){
   if(this.right !== null){
     this.right.visit(); //recursive invoke for right
   }
+}
 
+//Обратный обход (LRN)
+Node.prototype.visit = function(){
+
+  if(this.right !== null){
+    this.right.visit(); //recursive invoke for right
+  }
+
+  console.log(this.value);
+
+  if(this.left !== null){
+    this.left.visit(); //recursive invoke for left
+  }
 }
