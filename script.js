@@ -1,12 +1,18 @@
 let tree;
+let num = 11;
 const treeNums = [8, 10, 3, 1, 6, 14, 4, 7, 13]
+
 function setup() {
   tree = new Tree();
   console.log(tree);
-  for(let i of treeNums){
+  for (let i of treeNums) {
     tree.addValue(i);
   }
   tree.traverse(); // обход дерева
+
+  let result = tree.search(num); //поиск в бинарном дереве
+  console.log(result ? result : ' Not found');
+
 }
 
 //******************************************
@@ -24,8 +30,12 @@ Tree.prototype.addValue = function (value) {
   }
 }
 
-Tree.prototype.traverse = function (){
+Tree.prototype.traverse = function () {
   this.root.visit();
+}
+
+Tree.prototype.search = function (value) {
+  return this.root.search(value);
 }
 
 //******************************************
@@ -54,28 +64,40 @@ Node.prototype.addNode = function (n) {
 }
 
 // Прямой обход (NLR)
-Node.prototype.visit = function(){
-  if(this.left !== null){
+Node.prototype.visit = function () {
+  if (this.left !== null) {
     this.left.visit(); //recursive invoke for left
   }
 
   console.log(this.value);
 
-  if(this.right !== null){
+  if (this.right !== null) {
     this.right.visit(); //recursive invoke for right
   }
 }
 
 //Обратный обход (LRN)
-Node.prototype.visit = function(){
+Node.prototype.visit = function () {
 
-  if(this.right !== null){
+  if (this.right !== null) {
     this.right.visit(); //recursive invoke for right
   }
 
   console.log(this.value);
 
-  if(this.left !== null){
+  if (this.left !== null) {
     this.left.visit(); //recursive invoke for left
   }
+}
+
+Node.prototype.search = function (val) {
+  if (this.value === Number(val)) {
+    console.log('Found', val);
+    return this;
+  } else if (val < this.value && this.left) {
+    return this.left.search(val);
+  } else if (val > this.value && this.right) {
+    return this.right.search(val);
+  }
+  return null;
 }
