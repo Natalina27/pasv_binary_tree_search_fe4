@@ -1,17 +1,20 @@
 let tree;
-let num = 11;
+let num = 13;
 const treeNums = [8, 10, 3, 1, 6, 14, 4, 7, 13]
 
 function setup() {
   tree = new Tree();
-  console.log(tree);
+
   for (let i of treeNums) {
     tree.addValue(i);
   }
+
   tree.traverse(); // обход дерева
 
   let result = tree.search(num); //поиск в бинарном дереве
   console.log(result ? result : ' Not found');
+
+  console.log(tree);
 
 }
 
