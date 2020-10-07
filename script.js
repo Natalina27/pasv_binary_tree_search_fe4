@@ -93,6 +93,7 @@ Node.prototype.visit = function () {
   }
 }
 
+//Поиск
 Node.prototype.search = function (val) {
   if (this.value === Number(val)) {
     console.log('Found', val);
