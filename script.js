@@ -99,9 +99,9 @@ Node.prototype.search = function (val) {
     console.log('Found', val);
     return this;
   } else if (val < this.value && this.left) {
-    return this.left.search(val);
+    return this.left.search(val); //recursive invoke for left
   } else if (val > this.value && this.right) {
-    return this.right.search(val);
+    return this.right.search(val); //recursive invoke for right
   }
   return null;
 }
